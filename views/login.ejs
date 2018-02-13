@@ -3,18 +3,25 @@
 <html>
 <head>
     <title>Node Authentication</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-        body        { padding-top:80px; }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
+
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
+      <nav-bar :auth="auth"
+      :authenticated="authenticated"></nav-bar>
+        <a href="/login" class="btn btn-default">Sign up</a>
+        <a href="/logout" class="btn btn-default">Log Out</a>
+    </div>
+
 <div class="container">
 
 <div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span> Login</h1>
+    <h1>Login</h1>
 
     <!-- show any messages that come back with authentication -->
     <% if (message.length > 0) { %>
@@ -43,5 +50,11 @@
 </div>
 
 </div>
+
+<footer class="text-muted">
+      <div class="container">
+        <p>&copy; 2018 Standup Stash! | Built by <a href="http://www.onerutter.com">Jake Rutter</a> for <a href="https://twitter.com/hashtag/100DaysOfCode?src=hash">#100daysofcode</a></p>
+      </div>
+    </footer>
 </body>
 </html>
