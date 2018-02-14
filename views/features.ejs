@@ -16,35 +16,48 @@
       <% if(user){ %>
         <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> Log out</a>
      <% } else{ %>
-       <a href="/features" class="btn btn-default"><span class="fa fa-user"></span> Features</a>
        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
     <% } %>
     </div>
 
-<div class="container">
+    <div class="container">
+          <div id="content">
+              <h1 class="display-4">Features</h1>
+              <p class="lead">I am still building the features for billing and setting up a team to manage multiple users, dashboards, etc.<br><br></p>
 
-    <div class="page-header text-center">
-        <h1><span class="fa fa-user"></span> Profile Page</h1>
-    </div>
 
-    <div class="row">
+                <h4>Version 0.0.1</h4>
+                <ul>
+                    <li>Create an account</li>
+                  </ul>
+                </li>
+                <hr>
 
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+                <h4>Next Up</h4>
+                <ul>
+                  <li>View Profile</li>
+                  <li>View All Daily Statuses in Stash History</li>
+                    <li>Add a daily status</li>
+                    <li>Setup Teams</li>
+                    <ul>
+                      <li>Create a Team / Manage Team</li>
+                      <li>Invite Friends</li>
+                      <li>View Status of Team</li>
+                    </ul>
+                    <li>Filter your Stash History based on Team or Personal</li>
+                    <li>Signup Flow</li>
+                    <li>Add Pagination to History</li>
+                    <li>Change default sort on History</li>
+                    <li>Email Notificaitons</li>
+                  </ul>
 
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
+                <hr>
 
-            </div>
-        </div>
 
-    </div>
+
+          </div>
+      </div>
 
 </div>
 
