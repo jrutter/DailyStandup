@@ -1,6 +1,5 @@
 To Do:
 # Setup Parcel
-# Setup conditionals in views based on if logged in (switch login/logout)
 # Setup View for showing all standups
 # Move over views from Vuejs app.
 # Setup Google Authentication login using passport
@@ -9,3 +8,5 @@ To Do:
 
 Done:
 # Day 45: https://scotch.io/tutorials/easy-node-authentication-setup-and-local
+# Day 46:
+* Setup conditionals in views based on if logged in (switch login/logout)

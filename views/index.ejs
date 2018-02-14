@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+    <title>Daily Standup</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css" />
 
@@ -13,10 +13,12 @@
 
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
-      <nav-bar :auth="auth"
-      :authenticated="authenticated"></nav-bar>
-        <a href="/login" class="btn btn-default">Sign up</a>
-        <a href="/logout" class="btn btn-default">Log Out</a>
+      <% if(user){ %>
+        <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> Log out</a>
+     <% } else{ %>
+       <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+       <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+    <% } %>
     </div>
 
 <div class="container">
@@ -28,8 +30,9 @@
 
 <p>A website to help you log and track your Daily Standup Meetings.<br>
 
-<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
-<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+
+
+
 
         </div>
 

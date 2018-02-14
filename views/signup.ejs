@@ -11,10 +11,12 @@
 
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
-      <nav-bar :auth="auth"
-      :authenticated="authenticated"></nav-bar>
-        <a href="/login" class="btn btn-default">Sign up</a>
-        <a href="/logout" class="btn btn-default">Log Out</a>
+      <% if(user){ %>
+        <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> Log out</a>
+     <% } else{ %>
+       <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+       <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+    <% } %>
     </div>
 
 <div class="container">
