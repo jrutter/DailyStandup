@@ -1,5 +1,5 @@
 # To Do:
-[] Setup Parcel
+- [ ] Setup Parcel
 [] Setup View for showing all standups
 [] Move over views from Vuejs app.
 [] Setup Google Authentication login using passport
