@@ -3,9 +3,7 @@
 // import axios from 'axios'
 
 
-module.exports = function(app, passport) {
-
-
+module.exports = function(app, passport, axios) {
 
     app.get('/', function(req, res) {
         res.render('index.ejs', {
@@ -20,17 +18,29 @@ module.exports = function(app, passport) {
     });
 
     app.get('/list', function(req, res) {
+        const data = require('../data.json');
+        const models = data.models;
         // res.render('list.ejs', {
         //   user : req.user,
         //   test: 'test'
         // });
-        res.json('test')
+        axios.get('https://api.github.com/users/jrutter')
+        .then(function(response){
+          console.log(response.data); // ex.: { user: 'Your User'}
+          console.log(response.status); // ex.: 200
+          res.json(response.data);
+        });
+        // res.status(200).json({ models });
     });
 
 
     app.get('/login', function(req, res) {
         // render the page and pass in any flash data if it exists
-        res.render('login.ejs', { message: req.flash('loginMessage') });
+        res.render('login.ejs',
+        {
+          message: req.flash('loginMessage'),
+          user : req.user
+      });
     });
 
     // process the login form
