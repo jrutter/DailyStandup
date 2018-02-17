@@ -20,17 +20,19 @@ module.exports = function(app, passport, axios) {
     app.get('/list', function(req, res) {
         const data = require('../data.json');
         const models = data.models;
-        // res.render('list.ejs', {
-        //   user : req.user,
-        //   test: 'test'
-        // });
-        axios.get('https://api.github.com/users/jrutter')
-        .then(function(response){
-          console.log(response.data); // ex.: { user: 'Your User'}
-          console.log(response.status); // ex.: 200
+
+        let searchQ = {}
+        axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',
+        {
+          params: {
+            apiKey: 'lAsBHd1474tcG5UNO_KlBFCb5nUWEtt-',
+            q: searchQ
+          }
+        }).then(function (response) {
           res.json(response.data);
-        });
-        // res.status(200).json({ models });
+        }).catch(function (error) {
+          console.log('error', error)
+        })
     });
 
 
