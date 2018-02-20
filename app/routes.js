@@ -17,11 +17,21 @@ module.exports = function(app, passport, axios) {
         });
     });
 
-    app.get('/list', function(req, res) {
+    app.get('/list/:cat', function(req, res) {
         const data = require('../data.json');
         const models = data.models;
 
+        console.log('req', req.params.cat);
+        console.log('user', req.user);
         let searchQ = {}
+        let teamQuery = req.params.cat;
+        if (teamQuery === 'team') {
+          searchQ = {'team': 'onerutter'}
+        } else if (teamQuery === 'user') {
+          searchQ = {'email': ''}
+        }
+
+
         axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',
         {
           params: {
@@ -29,7 +39,7 @@ module.exports = function(app, passport, axios) {
             q: searchQ
           }
         }).then(function (response) {
-          console.log('data', response.data);
+          // console.log('data', response.data);
           res.render('list.ejs',
           {
             data: response.data,
