@@ -14,6 +14,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const session      = require('express-session');
 const axios      = require('axios');
+const moment = require('moment');
 
 
 const configDB = require('./config/database.js');
@@ -40,7 +41,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
 // app.use(require('./controllers'))
-require('./app/routes.js')(app, passport, axios); // load our routes and pass in our app and fully configured passport
+require('./app/routes.js')(app, passport, axios, moment); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
 app.listen(port);

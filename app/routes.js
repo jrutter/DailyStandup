@@ -3,7 +3,7 @@
 // import axios from 'axios'
 
 
-module.exports = function(app, passport, axios) {
+module.exports = function(app, passport, axios, moment) {
 
     app.get('/', function(req, res) {
         res.render('index.ejs', {
@@ -44,7 +44,8 @@ module.exports = function(app, passport, axios) {
           res.render('list.ejs',
           {
             data: response.data,
-            user : req.user
+            user : req.user,
+            moment: moment
           });
         }).catch(function (error) {
         })
