@@ -29,10 +29,16 @@ module.exports = function(app, passport, axios) {
             q: searchQ
           }
         }).then(function (response) {
-          res.json(response.data);
+          console.log('data', response.data);
+          res.render('list.ejs',
+          {
+            data: response.data,
+            user : req.user
+          });
         }).catch(function (error) {
           console.log('error', error)
         })
+
     });
 
 
