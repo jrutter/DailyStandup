@@ -25,6 +25,17 @@
 
     <div class="container">
 
+      <div class="list-filter">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link"  href="/list/team">My Team</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/list/user">Personal</a>
+                  </li>
+                </ul>
+                </div>
+
       <% if(user){ %>
         <div class="card-deck">
         <% for(var i=0; i<data.length; i++) {%>
