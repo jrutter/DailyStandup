@@ -17,6 +17,12 @@ module.exports = function(app, passport, axios, moment) {
         });
     });
 
+    app.get('/add', function(req, res) {
+        res.render('add.ejs', {
+          user : req.user
+        });
+    });
+
     app.get('/list/:cat', function(req, res) {
         const data = require('../data.json');
         const models = data.models;

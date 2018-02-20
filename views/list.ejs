@@ -13,6 +13,7 @@
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
       <% if(user){ %>
+        <a href="/add" class="btn btn-default">Add Status</a>
         <a href="/list/user" class="btn btn-default">Stash Log</a>
         <a href="/profile" class="btn btn-default">Settings</a>
         <a href="/logout" class="btn btn-default">Log out</a>
@@ -25,18 +26,20 @@
 
     <div class="container">
 
-      <div class="list-filter">
-                <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link"  href="/list/team">My Team</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/list/user">Personal</a>
-                  </li>
-                </ul>
-                </div>
 
       <% if(user){ %>
+        <div class="list-filter">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link"  href="/list/team">My Team</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/list/user">Personal</a>
+                    </li>
+                  </ul>
+                  </div>
+
+
         <div class="card-deck">
         <% for(var i=0; i<data.length; i++) {%>
           <div class="card mb-4 box-shadow">

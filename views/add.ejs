@@ -15,7 +15,7 @@
       <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
       <% if(user){ %>
         <a href="/add" class="btn btn-default">Add Status</a>
-        <a href="/list/user" class="btn btn-default">Stash Log</a>
+        <a href="/list" class="btn btn-default">Stash Log</a>
         <a href="/profile" class="btn btn-default">Settings</a>
         <a href="/logout" class="btn btn-default">Log out</a>
      <% } else{ %>
@@ -25,27 +25,16 @@
     <% } %>
     </div>
 
-<div class="container">
+    <div class="container">
+          <div id="content">
+            <h1>What's your current status?</h1>
 
-    <div class="page-header text-center">
-        <h1>Profile</h1>
-    </div>
 
-    <div class="row">
 
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
 
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                    </p>
 
-            </div>
-        </div>
-
-    </div>
+          </div>
+      </div>
 
 </div>
 
