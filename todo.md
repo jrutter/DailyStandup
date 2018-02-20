@@ -5,6 +5,7 @@
 - [ ]  Setup node-sass with build folder?
 - [ ]  Setup model for standups
 - [ ] How to structure app to be able to use imports, etc. in controllers on routes
+- [ ] Setup gravatar in app
 
 
 # Done:
