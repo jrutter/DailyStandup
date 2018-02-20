@@ -21,16 +21,18 @@ module.exports = function(app, passport, axios) {
         const data = require('../data.json');
         const models = data.models;
 
-        console.log('req', req.params.cat);
-        console.log('user', req.user);
         let searchQ = {}
         let teamQuery = req.params.cat;
+
+
         if (teamQuery === 'team') {
           searchQ = {'team': 'onerutter'}
-        } else if (teamQuery === 'user') {
-          searchQ = {'email': ''}
+        } else if (teamQuery === 'user' && req.user) {
+          searchQ = {'email': req.user.local.email}
         }
-
+        else {
+          searchQ = {}
+        }
 
         axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',
         {
@@ -39,14 +41,12 @@ module.exports = function(app, passport, axios) {
             q: searchQ
           }
         }).then(function (response) {
-          // console.log('data', response.data);
           res.render('list.ejs',
           {
             data: response.data,
             user : req.user
           });
         }).catch(function (error) {
-          console.log('error', error)
         })
 
     });

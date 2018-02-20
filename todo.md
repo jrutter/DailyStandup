@@ -14,3 +14,7 @@
 - [x] Setup axios as a require and passing into the routes files. Using to pull some data back as an API.
 - [x]  Setup List API into app, to hide keys
 - [x]  Add parameters to API to control what you can see in the API returned to the server
+
+
+# Resources:
+* https://www.djamware.com/post/58bd823080aca7585c808ebf/nodejs-expressjs-mongoosejs-and-passportjs-authentication
