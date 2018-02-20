@@ -29,7 +29,35 @@
           <div id="content">
             <h1>What's your current status?</h1>
 
+            <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Yesterday?</span>
+          </div>
+          <textarea class="form-control" v-model="yesterday" aria-label="With textarea"></textarea>
+        </div>
 
+        <br>
+
+        <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Today?</span>
+        </div>
+        <textarea class="form-control" v-model="today" aria-label="With textarea"></textarea>
+      </div>
+
+      <br>
+
+
+      <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Blockers?</span>
+      </div>
+      <textarea class="form-control" v-model="blocker" aria-label="With textarea"></textarea>
+    </div>
+
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit" v-on:click="saveStatus(event)">Add Status</button>
+      </div>
 
 
 
