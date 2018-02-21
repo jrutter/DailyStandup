@@ -12,13 +12,14 @@
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
       <% if(user){ %>
-        <a href="/list/user" class="btn btn-default">Stash Log</a>
-        <a href="/profile" class="btn btn-default">Settings</a>
-        <a href="/logout" class="btn btn-default">Log out</a>
+        <a href="/add" class="btn btn-default">Add Status</a>
+        <a href="/list/team" class="btn btn-default">Stash Log</a>
+        <a href="/user/profile" class="btn btn-default">Settings</a>
+        <a href="/user/logout" class="btn btn-default">Log out</a>
      <% } else{ %>
        <a href="/features" class="btn btn-default">Features</a>
-       <a href="/login" class="btn btn-default">Login</a>
-       <a href="/signup" class="btn btn-default">Signup</a>
+       <a href="/user/login" class="btn btn-default">Login</a>
+       <a href="/user/signup" class="btn btn-default">Signup</a>
     <% } %>
     </div>
 
@@ -34,7 +35,7 @@
     <% } %>
 
     <!-- LOGIN FORM -->
-    <form action="/login" method="post">
+    <form action="/user/login" method="post">
         <div class="form-group">
             <label>Email</label>
             <input type="text" class="form-control" name="email" value="jake.rutter@gmail.com">
