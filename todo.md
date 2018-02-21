@@ -22,6 +22,7 @@
 
 # Next Up:
 * https://www.caffeinecoding.com/better-express-routing-for-nodejs/
+* https://github.com/kelyvin/express-env-example
 
 # Resources:
 * https://www.djamware.com/post/58bd823080aca7585c808ebf/nodejs-expressjs-mongoosejs-and-passportjs-authentication
