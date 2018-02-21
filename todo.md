@@ -20,7 +20,8 @@
 - [x] How to structure app to be able to use imports, etc. in controllers on routes
 - [x]  Move over views from Vuejs app.
 
-
+# Next Up:
+* https://www.caffeinecoding.com/better-express-routing-for-nodejs/
 
 # Resources:
 * https://www.djamware.com/post/58bd823080aca7585c808ebf/nodejs-expressjs-mongoosejs-and-passportjs-authentication
