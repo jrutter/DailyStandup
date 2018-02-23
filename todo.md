@@ -4,7 +4,6 @@
 - [ ] Setup node-sass with build folder?
 - [ ] Setup gravatar in app
 - [ ] Setup email notifications using mandrill or something similar
-- [ ] Add additional fields to the Profile
 - [ ] Push app up to heroku with new build
 - [ ] Clean up logic for Add status
 - [ ] Add additional fields to add status
@@ -21,6 +20,7 @@
 - [x] How to structure app to be able to use imports, etc. in controllers on routes
 - [x]  Move over views from Vuejs app.
 - [x] Setup model for standups
+- [x] Add additional fields to the Profile in model
 
 # Next Up:
 * https://www.caffeinecoding.com/better-express-routing-for-nodejs/
@@ -28,3 +28,4 @@
 
 # Resources:
 * https://www.djamware.com/post/58bd823080aca7585c808ebf/nodejs-expressjs-mongoosejs-and-passportjs-authentication
+* https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
