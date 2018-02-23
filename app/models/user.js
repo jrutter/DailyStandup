@@ -27,6 +27,13 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    profile: {
+      firstName: String,
+      lastName: String,
+      location: String,
+      username: String,
+      teamName: String
     }
 
 });
