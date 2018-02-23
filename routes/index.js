@@ -22,7 +22,7 @@ router.post("/addstatus", (req, res) => {
     console.log('myData', myData);
     myData.save()
         .then(item => {
-            res.send("Name saved to database");
+          res.redirect('/list/user');
         })
         .catch(err => {
             res.status(400).send("Unable to save to database");
@@ -50,7 +50,7 @@ router.get('/list/:cat', function(req, res) {
       searchQ = {}
     }
 
-    axios.get('https://api.mlab.com/api/1/databases/standup/collections/stash',
+    axios.get('https://api.mlab.com/api/1/databases/standup/collections/status',
     {
       params: {
         apiKey: 'lAsBHd1474tcG5UNO_KlBFCb5nUWEtt-',
