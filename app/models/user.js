@@ -31,8 +31,8 @@ var userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
     location: String,
-    username: String,
-    teamName: String,
+    username: { type: String, unique: true },
+    team: String,
     admin: Boolean,
     created_at: Date,
     updated_at: Date

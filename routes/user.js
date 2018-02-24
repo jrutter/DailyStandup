@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var gravatar = require('gravatar');
 
+const User = require('../app/models/user');
+
+
 var isAuthenticated = function (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler
 	// Passport adds this method to request object. A middleware is allowed to add properties to
@@ -46,10 +49,30 @@ module.exports = function(passport){
   }));
 
   router.get('/profile', isAuthenticated, function(req, res) {
+
       res.render('profile.ejs', {
           user : req.user,
 					gravatar: gravatar.url(req.user.local.email)
       });
+  });
+
+	router.post('/profile/edit', isAuthenticated, function(req, res) {
+		console.log('form', req.body);
+		// var myData = new Status(req.body);
+
+		User.findByIdAndUpdate(req.user._id, {
+			username: req.body.username,
+			team: req.body.team
+		}, function(err, user) {
+		  if (err) throw err;
+
+		  // we have the updated user returned to us
+		  console.log(user);
+			res.redirect('/user/profile');
+		});
+
+
+
   });
 
   router.get('/logout', function(req, res) {

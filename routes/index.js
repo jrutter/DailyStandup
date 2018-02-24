@@ -42,7 +42,7 @@ router.get('/list/:cat', function(req, res) {
     let teamQuery = req.params.cat;
 
     if (teamQuery === 'team') {
-      searchQ = {'team': 'onerutter'}
+      searchQ = {'team': req.user.team}
     } else if (teamQuery === 'user' && req.user) {
       searchQ = {'email': req.user.local.email}
     }
