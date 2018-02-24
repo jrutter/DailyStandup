@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var gravatar = require('gravatar');
 
 var isAuthenticated = function (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler
@@ -39,14 +40,15 @@ module.exports = function(passport){
 
   // process the signup form
   router.post('/signup', passport.authenticate('local-signup', {
-      successRedirect : '/profile', // redirect to the secure profile section
-      failureRedirect : '/signup', // redirect back to the signup page if there is an error
+      successRedirect : '/user/profile', // redirect to the secure profile section
+      failureRedirect : '/user/signup', // redirect back to the signup page if there is an error
       failureFlash : true // allow flash messages
   }));
 
   router.get('/profile', isAuthenticated, function(req, res) {
       res.render('profile.ejs', {
-          user : req.user // get the user out of session and pass to template
+          user : req.user,
+					gravatar: gravatar.url(req.user.local.email)
       });
   });
 

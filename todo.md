@@ -2,7 +2,6 @@
 - [ ] Setup Parcel
 - [ ] Setup Google Authentication login using passport
 - [ ] Setup node-sass with build folder?
-- [ ] Setup gravatar in app
 - [ ] Setup email notifications using mandrill or something similar
 - [ ] Push app up to heroku with new build
 - [ ] Clean up logic for Add status
@@ -21,6 +20,8 @@
 - [x]  Move over views from Vuejs app.
 - [x] Setup model for standups
 - [x] Add additional fields to the Profile in model
+- [x] Setup gravatar in app
+
 
 # Next Up:
 * https://www.caffeinecoding.com/better-express-routing-for-nodejs/
