@@ -31,8 +31,8 @@
 
             <% if(user){ %>
               <form action="/addstatus" method="post">
-              <input type="text" name="email" value="<%= user.local.email %>">
-              <input type="text" name="team" value="<%= user.team %>">
+              <input type="hidden" name="email" value="<%= user.local.email %>">
+              <input type="hidden" name="team" value="<%= user.team %>">
             <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">Yesterday?</span>
