@@ -39,12 +39,11 @@
                   </ul>
                   </div>
 
-
         <div class="card-deck">
         <% for(var i=0; i<data.length; i++) {%>
           <div class="card mb-4 box-shadow">
             <div class="card-header">
-              <h4 class="my-0 font-weight-normal"><%= moment(data[i].created_at).format( 'MMM-DD-YYYY') %></h4>
+              <h4 class="my-0 font-weight-normal"><%= moment(data[i].created_at.$date).format( 'MMM-DD-YYYY') %></h4>
             </div>
 
             <div class="card-body">
@@ -52,11 +51,9 @@
                 <li><i class="fas fa-calendar-plus"></i> Today: <%= data[i].today %></li>
                 <li><i class="fas fa-calendar-check"></i> Yesterday: <%= data[i].yesterday %></li>
                 <li><i class="fas fa-ban"></i> Blocker: <%= data[i].blocker %></li>
-                <template v-if="item.team">
-                  <li><i class="fas fa-users"></i> Team: <%= data[i].team %></li>
-                </template>
+                <li><i class="fas fa-users"></i> Team: <%= data[i].team %></li>
 
-                <li><i class="fas fa-user"></i> User: <%= data[i].name %></li>
+                <li><i class="fas fa-user"></i> User: <%= data[i].email %></li>
               </ul>
             </div>
 
