@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var gravatar = require('gravatar');
 
-const User = require('../app/models/user');
+const User = require('../models/user');
+const controller = require('../controllers/user.controller');
 
 
 var isAuthenticated = function (req, res, next) {
@@ -15,16 +16,9 @@ var isAuthenticated = function (req, res, next) {
 	res.redirect('/');
 }
 
-module.exports = function(passport){
+// Start setting up routes
+router.get('/login', controller.login);
 
-  router.get('/login', function(req, res) {
-      // render the page and pass in any flash data if it exists
-      res.render('login.ejs',
-      {
-        message: req.flash('loginMessage'),
-        user : req.user
-    });
-  });
 
   // process the login form
   router.post('/login', passport.authenticate('local-login', {
