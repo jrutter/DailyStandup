@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const moment = require('moment');
 
-const Status = require('../app/models/status');
+const Status = require('../models/status');
 
 router.get('/', function(req, res) {
   res.render('index.ejs', {
