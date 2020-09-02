@@ -24,12 +24,12 @@
       <% if(user){ %>
         <a href="/add" class="btn btn-default">Add Status</a>
         <a href="/list/team" class="btn btn-default">Stash Log</a>
-        <a href="/user/profile" class="btn btn-default">Settings</a>
-        <a href="/user/logout" class="btn btn-default">Log out</a>
+        <a href="/user" class="btn btn-default">Settings</a>
+        <a href="/logout" class="btn btn-default">Log out</a>
      <% } else{ %>
        <a href="/features" class="btn btn-default">Features</a>
-       <a href="/user/login" class="btn btn-default">Login</a>
-       <a href="/user/signup" class="btn btn-default">Signup</a>
+       <a href="/login" class="btn btn-default">Login</a>
+       <a href="/signup" class="btn btn-default">Signup</a>
     <% } %>
     </div>
 
@@ -37,7 +37,7 @@
 
 
       <% if(user){ %>
-        <div class="list-filter">
+        <!-- <div class="list-filter">
                   <ul class="nav nav-tabs">
                     <li class="nav-item">
                       <a class="nav-link"  href="/list/team">My Team</a>
@@ -46,23 +46,23 @@
                       <a class="nav-link" href="/list/user">Personal</a>
                     </li>
                   </ul>
-                  </div>
+                  </div> -->
 
         <div class="card-deck">
-        <% for(var i=0; i<data.length; i++) {%>
+
+        <% for(var i=0; i<results.length; i++) {%>
           <div class="card mb-4 box-shadow">
             <div class="card-header">
-              <h4 class="my-0 font-weight-normal"><%= moment(data[i].created_at.$date).format( 'MMM-DD-YYYY') %></h4>
+              hi
             </div>
 
             <div class="card-body">
               <ul class="list-unstyled mt-3 mb-4">
-                <li><i class="fas fa-calendar-plus"></i> Today: <%= data[i].today %></li>
-                <li><i class="fas fa-calendar-check"></i> Yesterday: <%= data[i].yesterday %></li>
-                <li><i class="fas fa-ban"></i> Blocker: <%= data[i].blocker %></li>
-                <li><i class="fas fa-users"></i> Team: <%= data[i].team %></li>
+                <li><i class="fas fa-calendar-plus"></i> Today: <%= results[i].today %></li>
+                <li><i class="fas fa-calendar-check"></i> Yesterday: <%= results[i].yesterday %></li>
+                <li><i class="fas fa-ban"></i> Blocker: <%= results[i].blocker %></li>
 
-                <li><i class="fas fa-user"></i> User: <%= data[i].email %></li>
+                <li><i class="fas fa-user"></i> User: <%= results[i].email %></li>
               </ul>
             </div>
 
@@ -70,7 +70,7 @@
           <% } %>
         </div>
       <% } else{ %>
-        Please login. <a href="/user/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+        Please login. <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
         <% } %>
 
 

@@ -22,7 +22,7 @@ router.post("/addstatus", (req, res) => {
     console.log('myData', myData);
     myData.save()
         .then(item => {
-          res.redirect('/list/user');
+          res.redirect('/list');
         })
         .catch(err => {
             res.status(400).send("Unable to save to database");
@@ -36,6 +36,20 @@ router.get('/features', function(req, res) {
     user : req.user
   });
 })
+
+router.get('/list/', function(req, res) {
+
+  Status.find({}, function (err, docs) {
+    res.render('list.ejs',
+      {
+        results : docs,
+        moment: moment
+
+      });
+  });
+
+  
+});
 
 router.get('/list/:cat', function(req, res) {
     let searchQ = {}

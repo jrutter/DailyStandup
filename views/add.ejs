@@ -24,13 +24,13 @@
       <h5 class="my-0 mr-md-auto font-weight-normal logo"><a href="/">Standup Stash</a></h5>
       <% if(user){ %>
         <a href="/add" class="btn btn-default">Add Status</a>
-        <a href="/list/team" class="btn btn-default">Stash Log</a>
-        <a href="/user/profile" class="btn btn-default">Settings</a>
-        <a href="/user/logout" class="btn btn-default">Log out</a>
+        <a href="/list" class="btn btn-default">Stash Log</a>
+        <a href="/user" class="btn btn-default">Settings</a>
+        <a href="/logout" class="btn btn-default">Log out</a>
      <% } else{ %>
        <a href="/features" class="btn btn-default">Features</a>
-       <a href="/user/login" class="btn btn-default">Login</a>
-       <a href="/user/signup" class="btn btn-default">Signup</a>
+       <a href="/login" class="btn btn-default">Login</a>
+       <a href="/signup" class="btn btn-default">Signup</a>
     <% } %>
     </div>
 
@@ -38,10 +38,11 @@
           <div id="content">
             <h1>What's your current status?</h1>
 
+            <%= user %>
+
             <% if(user){ %>
               <form action="/addstatus" method="post">
-              <input type="hidden" name="email" value="<%= user.local.email %>">
-              <input type="hidden" name="team" value="<%= user.team %>">
+              <input type="hidden" name="email" value="<%= user.displayName %>">
             <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text">Yesterday?</span>
